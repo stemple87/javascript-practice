@@ -1,13 +1,11 @@
 function removeSmallest(numbers) {
   debugger;
   var lowNumber = 0;
-  const myNumbers = numbers;
   var Module = (function () {
     return {
       getSmallestNumber: function () {
-        numbers.sort();
-        var s = numbers[0];
-        return s;
+        var min = Math.min.apply(null, numbers);
+        return min
       },
       removeSmallestNumber: function () {
         for (var j = 0; j < numbers.length; j++){
@@ -21,7 +19,6 @@ function removeSmallest(numbers) {
     };
   })();
   lowNumber = Module.getSmallestNumber();
-  numbers = myNumbers;
   result = Module.removeSmallestNumber();
   return result;
 }
